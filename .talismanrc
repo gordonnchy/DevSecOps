@@ -1,0 +1,14 @@
+fileignoreconfig:
+- filename: sec_files/password.txt
+  checksum: 3da25e43ffb8798f7725d501c751b7ff16a86d9f73f2a42a7dd01271b1f471e1
+- filename: sec_files/file2
+  checksum: 8bf0a8cec98ae8738d13e83367e0c9b84894ce7139967acbe91c59ed8a1d7295
+- filename: slack-emojis/jenkins.png
+  checksum: c6d0ecaae50fbe031baf562ed13b9f608e800c10f8b97a40a3408e557d4d4ce5
+- filename: sec_files/file3
+  checksum: 457fccabc549460b31528d3cedf05dd507fa6246c4f5844955b4da3e469b72a9
+- filename: kube-scan.yaml
+  checksum: 531e424a42c33adddb3611a79392a450e52aa96c6ee305ab217189ed8b7fcb08
+- filename: slack-emojis/deadpool.png
+  checksum: 9c510fba214f8e1ab385256c833ba2addae12836d549bc9d7d10d53b98ec2fa5
+version: ""
