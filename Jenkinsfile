@@ -33,6 +33,11 @@ pipeline {
               }
           }
        }
+       stage('Sonaqube Test-SAST') {
+        steps {
+            sh "mvn clean verify sonar:sonar -Dsonar.projectKey=DevSecOps -Dsonar.projectName='DevSecOps' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_06bc539439161e6f82d4176fed0c14205adf6a8b"
+        }
+       }
            stage('Docker Build and Push') {
             steps {
               withDockerRegistry([credentialsId: "docker-hub", url: "https://quay.io/"]) {
