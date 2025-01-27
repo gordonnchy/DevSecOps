@@ -48,16 +48,7 @@ pipeline {
          }
        }
     }
-           stage('Docker Build and Push') {
-            steps {
-              withDockerRegistry([credentialsId: "docker-hub", url: "https://quay.io/"]) {
-                sh 'printenv'
-                sh 'sudo docker build -t quay.io/glyimo/numeric-app:""$GIT_COMMIT"" .'
-                sh 'docker push quay.io/glyimo/numeric-app:""$GIT_COMMIT""'
-            }
-         }
-      }
-      stage('Vulnerability Scan - Docker') {
+    stage('Vulnerability Scan - Docker') {
             steps {
                 parallel(
                     "Dependency Scan": {
@@ -74,6 +65,16 @@ pipeline {
                 }
              }
           }
+           stage('Docker Build and Push') {
+            steps {
+              withDockerRegistry([credentialsId: "docker-hub", url: "https://quay.io/"]) {
+                sh 'printenv'
+                sh 'sudo docker build -t quay.io/glyimo/numeric-app:""$GIT_COMMIT"" .'
+                sh 'docker push quay.io/glyimo/numeric-app:""$GIT_COMMIT""'
+            }
+         }
+      }
+      
            stage('K8S Deployment - DEV') {
                steps {  
                  withKubeConfig([credentialsId: 'kubeconfig']) {
