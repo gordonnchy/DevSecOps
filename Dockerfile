@@ -4,4 +4,5 @@ ARG JAR_FILE=target/*.jar
 ADD ${JAR_FILE} app.jar
 COPY trivy-docker-image-scan.sh .
 COPY integration-test.sh .
+COPY zap.sh .
 ENTRYPOINT ["java","-jar","/app.jar"]
