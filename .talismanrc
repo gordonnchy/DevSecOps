@@ -12,7 +12,5 @@ fileignoreconfig:
 - filename: slack-emojis/deadpool.png
   checksum: 9c510fba214f8e1ab385256c833ba2addae12836d549bc9d7d10d53b98ec2fa5
 - filename: Jenkinsfile
-  checksum: dc79e761344aff1fc44d8093d14df4c3c66755951193bad25dff204ba243536c
-- filename: Jenkinsfile
-  checksum: b296895b4c38ed451ea553f06b9be4f7a0385e40ec86047767d02d55bd93c402
+  checksum: 8ed14f85f0f660f10487584787a87d74f1f6d00c278d8f43dea32a504e644044
 version: ""
